@@ -1,0 +1,387 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DAC7912F-164D-4CC8-87E2-693EBB416C86}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Makru</RootNamespace>
+    <AssemblyName>Makru</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Gma.System.MouseKeyHook, Version=5.6.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Gma.System.MouseKeyHook.dll</HintPath>
+    </Reference>
+    <Reference Include="InputManager, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\InputManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Tesseract, Version=3.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Tesseract.3.3.0\lib\net45\Tesseract.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsInput, Version=6.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsInput.6.1.1\lib\net461\WindowsInput.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Activator.cs" />
+    <Compile Include="Activators.cs" />
+    <Compile Include="ActivatorShortcut.cs" />
+    <Compile Include="ActivatorTime.cs" />
+    <Compile Include="Command.cs" />
+    <Compile Include="CommandCondition.cs" />
+    <Compile Include="CommandInput.cs" />
+    <Compile Include="CommandReplayMakro.cs" />
+    <Compile Include="Commands.cs" />
+    <Compile Include="CommandType.cs" />
+    <Compile Include="CommandSetVariable.cs" />
+    <Compile Include="CommandWait.cs" />
+    <Compile Include="CommandWriteFile.cs" />
+    <Compile Include="Condition.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ConditionAnd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ConditionCompareOutputs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ConditionNode.cs" />
+    <Compile Include="ConditionOr.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ConditionPixelColor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ConditionProcessName.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ConditionWaitFor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormActivatorTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormActivatorTime.Designer.cs">
+      <DependentUpon>FormActivatorTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCommandSetVariable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCommandSetVariable.Designer.cs">
+      <DependentUpon>FormCommandSetVariable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCommandWriteFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCommandWriteFile.Designer.cs">
+      <DependentUpon>FormCommandWriteFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCondition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCondition.Designer.cs">
+      <DependentUpon>FormCondition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Folder.cs" />
+    <Compile Include="FormActivatorShortcut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormActivatorShortcut.Designer.cs">
+      <DependentUpon>FormActivatorShortcut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCommandWait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCommandWait.Designer.cs">
+      <DependentUpon>FormCommandWait.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCommandInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCommandInput.Designer.cs">
+      <DependentUpon>FormCommandInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormConditionProcessIsRunning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConditionProcessIsRunning.Designer.cs">
+      <DependentUpon>FormConditionProcessIsRunning.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLog.Designer.cs">
+      <DependentUpon>FormLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMacro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMacro.Designer.cs">
+      <DependentUpon>FormMacro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOCR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOCR.Designer.cs">
+      <DependentUpon>FormOCR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOCRHelper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOCRHelper.Designer.cs">
+      <DependentUpon>FormOCRHelper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOutput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOutput.Designer.cs">
+      <DependentUpon>FormOutput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPixelColorHelper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPixelColorHelper.Designer.cs">
+      <DependentUpon>FormPixelColorHelper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPixelComparer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPixelComparer.Designer.cs">
+      <DependentUpon>FormPixelComparer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRecordMakro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRecordMakro.Designer.cs">
+      <DependentUpon>FormRecordMakro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRename.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRename.Designer.cs">
+      <DependentUpon>FormRename.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCommandReplayMacro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCommandReplayMacro.Designer.cs">
+      <DependentUpon>FormCommandReplayMacro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSettings.Designer.cs">
+      <DependentUpon>FormSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSettingsMacro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSettingsMacro.Designer.cs">
+      <DependentUpon>FormSettingsMacro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTest.Designer.cs">
+      <DependentUpon>FormTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InputDetection.cs" />
+    <Compile Include="Macro.cs" />
+    <Compile Include="Macros.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Mouse.cs" />
+    <Compile Include="Output.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OutputAddition.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OutputDivide.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OutputMultiply.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OutputOCR.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OutputStaticText.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OutputSubstract.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OutputVariable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Screenshoot.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="SettingsMacro.cs" />
+    <Compile Include="Shortcut.cs" />
+    <Compile Include="Variable.cs" />
+    <EmbeddedResource Include="FormActivatorTime.resx">
+      <DependentUpon>FormActivatorTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCommandSetVariable.resx">
+      <DependentUpon>FormCommandSetVariable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCommandWriteFile.resx">
+      <DependentUpon>FormCommandWriteFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCondition.resx">
+      <DependentUpon>FormCondition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormActivatorShortcut.resx">
+      <DependentUpon>FormActivatorShortcut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCommandWait.resx">
+      <DependentUpon>FormCommandWait.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCommandInput.resx">
+      <DependentUpon>FormCommandInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConditionProcessIsRunning.resx">
+      <DependentUpon>FormConditionProcessIsRunning.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLog.resx">
+      <DependentUpon>FormLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMacro.resx">
+      <DependentUpon>FormMacro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOCR.resx">
+      <DependentUpon>FormOCR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOCRHelper.resx">
+      <DependentUpon>FormOCRHelper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOutput.resx">
+      <DependentUpon>FormOutput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPixelColorHelper.resx">
+      <DependentUpon>FormPixelColorHelper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPixelComparer.resx">
+      <DependentUpon>FormPixelComparer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRecordMakro.resx">
+      <DependentUpon>FormRecordMakro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRename.resx">
+      <DependentUpon>FormRename.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCommandReplayMacro.resx">
+      <DependentUpon>FormCommandReplayMacro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSettings.resx">
+      <DependentUpon>FormSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSettingsMacro.resx">
+      <DependentUpon>FormSettingsMacro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\icon_folder.png" />
+    <None Include="bin\Debug\icon_makro.png" />
+    <None Include="bin\Debug\icon_aktivate.png" />
+    <None Include="bin\Debug\icon_command.png" />
+    <None Include="bin\Debug\icon_key.png" />
+    <None Include="bin\Debug\icon_wait.png" />
+    <Content Include=".nuget\mouse-keyboard-hook-logo.png" />
+    <None Include="bin\Debug\icon_variable.png" />
+    <None Include="bin\Debug\icon_zoom_in.png" />
+    <None Include="bin\Debug\icon_zoom_out.png" />
+    <None Include="bin\Debug\icon_play.png" />
+    <None Include="bin\Debug\icon_record.png" />
+    <None Include="bin\Debug\icon_remove.png" />
+    <None Include="bin\Debug\icon_stop.png" />
+    <None Include="bin\Debug\icon_condition.png" />
+    <None Include="bin\Debug\icon_writeFile.png" />
+    <None Include="bin\Debug\icon_makro.ico" />
+    <None Include="bin\Debug\icon.ico" />
+    <None Include="bin\Debug\icon_clock.png" />
+    <Content Include="icon.ico" />
+    <Content Include="icon_makro.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Tesseract.3.3.0\build\Tesseract.targets" Condition="Exists('..\packages\Tesseract.3.3.0\build\Tesseract.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Dieses Projekt verweist auf mindestens ein NuGet-Paket, das auf diesem Computer fehlt. Verwenden Sie die Wiederherstellung von NuGet-Paketen, um die fehlenden Dateien herunterzuladen. Weitere Informationen finden Sie unter "http://go.microsoft.com/fwlink/?LinkID=322105". Die fehlende Datei ist "{0}".</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Tesseract.3.3.0\build\Tesseract.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Tesseract.3.3.0\build\Tesseract.targets'))" />
+  </Target>
+</Project>
